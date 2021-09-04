@@ -4,7 +4,7 @@
 AUTHOR = 'Craig Saboe'
 SITENAME = "Craig's Blog"
 SITEURL = ''
-
+THEME = 'themes\mytheme'
 PATH = 'content'
 
 TIMEZONE = 'America/New_York'

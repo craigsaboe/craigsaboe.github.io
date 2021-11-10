@@ -3,7 +3,7 @@
 
 AUTHOR = 'Craig Saboe'
 SITENAME = "Craig's Blog"
-SITEURL = 'https://master.d36jrrex7ftknw.amplifyapp.com/'
+SITEURL = 'https://master.d36jrrex7ftknw.amplifyapp.com'
 THEME = 'themes\mytheme'
 PATH = 'content'
 

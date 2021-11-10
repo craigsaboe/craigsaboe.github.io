@@ -24,9 +24,76 @@
 <section id="content" class="content">
 
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/pull-a-list-of-filenames-in-a-unc-path.html" rel="bookmark" title="Permalink to Pull a list of filenames in a UNC path">Pull a list of filenames in a UNC path</a></h2> </header>
+                <div class="entry-content"> <ul>
+<li>To get the text list of files in a directory, you can normally do: <code>dir &gt; filenames.txt</code></li>
+<li>However, the Windows CLI can't use a UNC path as the current dir, so you need to use the Powershell CLI.  </li>
+<li>Once in the CLI, 'cd' to the UNC path and <code>dir &gt; filenames …</code></li></ul> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/string-parsing-in-net.html" rel="bookmark" title="Permalink to String Parsing in .NET">String Parsing in .NET</a></h2> </header>
+                <div class="entry-content"> <p>string lastPart = text.Substring(0, text.LastIndexOf('/')).Split('/').Last();</p>
+<p>Uri uri = new Uri("http://s.opencalais.com/1/pred/BusinessRelationType");
+string lastSegment = uri.Segments.Last();</p>
+<p>So use a '\' to get the end of a Windows file path! 
+https://stackoverflow.com/questions/3387222/how-to-get-the-last-part-of-a-string</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/craigs-rules-of-development.html" rel="bookmark" title="Permalink to Craig's Rules of Development">Craig's Rules of Development</a></h2> </header>
+                <div class="entry-content"> <p>1: WBAE
+WITHOUT BREAKING ANYTHING ELSE!</p>
+<p>2: WWHS
+What Would Higher-Ups Say</p>
+<p>2B: IIHT
+    Is It a Higher-Ups Thing</p>
+<p>3: UMNS
+    Users Make No Sense</p>
+<p>4: TINS
+    There Is No Spec</p>
+<p>5: ITFAR
+It’s There For A Reason </p>
+<p>Subject to revision, modification and reordering at any time whenever Craig …</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/just-tell-me-your-salary-range.html" rel="bookmark" title="Permalink to Just Tell Me Your Salary Range!">Just Tell Me Your Salary Range!</a></h2> </header>
+                <div class="entry-content"> <p>PUT YOUR SALARY RANGE ON THE JOB DESCRIPTION. I CAN'T TAKE A $20K PAY CUT EVEN IF I SEE YOUR IN-HOUSE STARBUCKS OR FEEL YOUR "AWESOME CULTURE" FIRST-HAND.  DON'T WASTE MY TIME.</p>
+<p>You have one.  It's written down, approved, budgeted for, and based on your particular setup, pretty firm (I …</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/live-interview-coding-should-die-in-a-fire.html" rel="bookmark" title="Permalink to Live Interview Coding Should Die In A Fire">Live Interview Coding Should Die In A Fire</a></h2> </header>
+                <div class="entry-content">  </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/log-parser-studio-log-parser-22.html" rel="bookmark" title="Permalink to Log Parser Studio + Log Parser 2.2">Log Parser Studio + Log Parser 2.2</a></h2> </header>
+                <div class="entry-content"> <ul>
+<li>Log Parser is a CLI tool for parsing text-based data that can handle a wide range of sources</li>
+<li>Log Parser Studio (LPS) is a GUI for that CLI because it sucks trying to remember long CLI arg strings like: <code>LogParser "SELECT TimeGenerated, SourceName, EventCategoryName, Message INTO report.txt FROM Security …</code></li></ul> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/pelican.html" rel="bookmark" title="Permalink to Pelican">Pelican</a></h2> </header>
-                <div class="entry-content"> <p>Docs:
-https://docs.getpelican.com/en/latest/</p> </div><!-- entry-content -->
+                <div class="entry-content"> <p>tl;dr;
+* github new repo
+* AWS Amplify
+* Amplify CI from GitHub &gt; master, then release
+* AWS Rt 53 config for domain
+...
+* (type type type)
+* pelican content
+* pelican --listen
+* git push \master
+* git merge \master &gt;&gt; \release</p>
+<p>Docs:
+https://docs.getpelican.com/en/latest/</p>
+<p>Markdown Formatting:
+https://daringfireball.net/projects/markdown/</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/stages-of-being-a-programmer.html" rel="bookmark" title="Permalink to Stages Of Being A Programmer">Stages Of Being A Programmer</a></h2> </header>
+                <div class="entry-content"> <div class="highlight"><pre><span></span><code><span class="mf">1.</span> <span class="n">I</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">know</span> <span class="n">anything</span>
+<span class="mf">2.</span> <span class="n">I</span> <span class="n">know</span> <span class="n">stuff</span> <span class="ow">and</span> <span class="n">can</span> <span class="n">see</span> <span class="n">where</span> <span class="n">I</span> <span class="n">can</span> <span class="n">fix</span> <span class="n">things</span> <span class="n">without</span> <span class="n">them</span> <span class="n">being</span> <span class="n">pointed</span> <span class="n">out</span>
+<span class="mf">3.</span> <span class="n">Fixing</span> <span class="n">things</span> <span class="n">is</span> <span class="n">hard</span><span class="p">,</span> <span class="n">I</span> <span class="n">think</span> <span class="n">we</span> <span class="n">should</span> <span class="n">rewrite</span> <span class="n">this</span><span class="err">!</span>
+<span class="mf">4.</span> <span class="n">Rewriting</span> <span class="n">this</span> <span class="n">was</span> <span class="n">fucking</span> <span class="n">stupid</span><span class="p">,</span> <span class="n">I</span> <span class="n">should</span> <span class="n">have</span> <span class="n">just</span> <span class="n">fixed</span> <span class="n">it</span><span class="err">!!</span>
+<span class="mf">5.</span> <span class="n">Ok</span><span class="p">,</span> <span class="n">maybe</span> <span class="n">this …</span></code></pre></div> </div><!-- entry-content -->
         </article>
         <article class="hentry">
                 <header> <h2 class="entry-title"><a href="https://www.craigsaboe.com/welcome.html" rel="bookmark" title="Permalink to Welcome">Welcome</a></h2> </header>

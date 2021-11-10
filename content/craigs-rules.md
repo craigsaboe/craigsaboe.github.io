@@ -1,5 +1,6 @@
-CRAIG’S RULES OF DEVELOPMENT
-
+Title: Craig's Rules of Development
+Date: 2021-08-30 10:48:00
+Category: General
 
 1: WBAE
 WITHOUT BREAKING ANYTHING ELSE!

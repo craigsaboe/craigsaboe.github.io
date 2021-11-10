@@ -1,3 +1,7 @@
+Title: Stages Of Being A Programmer
+Date: 2021-08-30 10:48:00
+Category: General
+	
 	1. I don't know anything
 	2. I know stuff and can see where I can fix things without them being pointed out
 	3. Fixing things is hard, I think we should rewrite this!

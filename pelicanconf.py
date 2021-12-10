@@ -3,7 +3,7 @@
 
 AUTHOR = 'Craig Saboe'
 SITENAME = "Craig's Blog"
-SITEURL = 'https://master.d36jrrex7ftknw.amplifyapp.com'
+SITEURL = 'http://localhost:8000'
 THEME = 'themes\mytheme'
 PATH = 'content'
 
@@ -29,6 +29,15 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = False
+
+DEFAULT_METADATA = {
+    'status': 'draft',
+}
+
+# Static paths
+# STATIC_PATHS = {
+
+# }
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

@@ -1,6 +1,11 @@
 Title: Craig's Rules of Development
 Date: 2021-08-30 10:48:00
-Category: General
+Modified: 2021-08-30 10:48:00
+Category: 
+Tags: 
+Slug: 
+Summary: 
+Status: draft
 
 1: WBAE
 WITHOUT BREAKING ANYTHING ELSE!

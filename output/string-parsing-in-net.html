@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <title>String Parsing in .NET - Craig's Blog</title>
         
@@ -7,33 +7,52 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">    
         
+        <!-- Bootstrap + Site CSS-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <link href="https://master.d36jrrex7ftknw.amplifyapp.com/theme/static/css/style.css" rel="stylesheet" />
+        <link href="http://localhost:8000/theme/style.css" rel="stylesheet" />
+
     </head>
 
-    <body id="index" class="archive">
+    <body id="index">
         <div class="container">
-            <div class="header">
-                <h3 class="text-muted"><a href="https://master.d36jrrex7ftknw.amplifyapp.com">Craig's Blog</a></h3>
-				<h2 class="text-muted"></h2>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="https://master.d36jrrex7ftknw.amplifyapp.com">Home</a></li>
-                    <li class="nav-item" ><a class="nav-link" href="https://master.d36jrrex7ftknw.amplifyapp.com/archives.html">Archives</a></li>
-                </ul>                
-             </div>
+
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+                <div class="container">
+                  <a class="navbar-brand" href="http://localhost:8000">\\ Craig's Blog</a>                  
+                  <div class="navbar-expand" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="http://localhost:8000">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="http://localhost:8000/pages/about-me.html">About Me</a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="http://localhost:8000/archives.html">Archives</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+
 <section id="content" class="article content">
   <header>
     <h2 class="entry-title">
-      <a href="https://master.d36jrrex7ftknw.amplifyapp.com/string-parsing-in-net.html" rel="bookmark"
+      <a href="http://localhost:8000/string-parsing-in-net.html" rel="bookmark"
          title="Permalink to String Parsing in .NET">String Parsing in .NET</a></h2>
  
   </header>
   
      
   <div class="entry-content">
-    <p>string lastPart = text.Substring(0, text.LastIndexOf('/')).Split('/').Last();</p>
-<p>Uri uri = new Uri("http://s.opencalais.com/1/pred/BusinessRelationType");
-string lastSegment = uri.Segments.Last();</p>
+    <h1>C# String Parsing Bits</h1>
+<p>Some string parsing bits in C#:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nt">string</span> <span class="nt">lastPart</span> <span class="o">=</span> <span class="nt">text</span><span class="p">.</span><span class="nc">Substring</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span> <span class="nt">text</span><span class="p">.</span><span class="nc">LastIndexOf</span><span class="o">(</span><span class="s1">&#39;/&#39;</span><span class="o">))</span><span class="p">.</span><span class="nc">Split</span><span class="o">(</span><span class="s1">&#39;/&#39;</span><span class="o">)</span><span class="p">.</span><span class="nc">Last</span><span class="o">();</span>
+
+    <span class="nt">Uri</span> <span class="nt">uri</span> <span class="o">=</span> <span class="nt">new</span> <span class="nt">Uri</span><span class="o">(</span><span class="s2">&quot;http://s.opencalais.com/1/pred/BusinessRelationType&quot;</span><span class="o">);</span>
+    <span class="nt">string</span> <span class="nt">lastSegment</span> <span class="o">=</span> <span class="nt">uri</span><span class="p">.</span><span class="nc">Segments</span><span class="p">.</span><span class="nc">Last</span><span class="o">();</span>
+</code></pre></div>
+
 <p>So use a '\' to get the end of a Windows file path! 
 https://stackoverflow.com/questions/3387222/how-to-get-the-last-part-of-a-string</p>
   </div><!-- /.entry-content -->
@@ -42,16 +61,12 @@ https://stackoverflow.com/questions/3387222/how-to-get-the-last-part-of-a-string
       Fri 15 October 2021
     </abbr>
     <address class="vcard author">
-      by <a class="url fn" href="https://master.d36jrrex7ftknw.amplifyapp.com/author/craig-saboe.html">Craig Saboe</a>
-    </address> in <a href="https://master.d36jrrex7ftknw.amplifyapp.com/category/dotnet.html">DotNet</a> Tagged   </footer><!-- /.post-info -->
+      by <a class="url fn" href="http://localhost:8000/author/craig-saboe.html">Craig Saboe</a>
+    </address> in <a href="http://localhost:8000/category/misc.html">misc</a> Tagged   </footer><!-- /.post-info -->
 </section>
+            
             <footer id="contentinfo" class="footer">
-                    <nav class="pull-right bottom-nav">
-                        <a href="https://master.d36jrrex7ftknw.amplifyapp.com/None">RSS</a>
-                    </nav>
-                    <address id="about" class="vcard body">
-                    &copy; <a href="https://master.d36jrrex7ftknw.amplifyapp.com">Craig's Blog</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
-                    </address><!-- /#about -->
+                &copy; <a href="http://localhost:8000">Craig's Blog</a> - proudly powered by <a href="http://getpelican.com/">Pelican</a>
             </footer><!-- /#contentinfo -->
         </div><!-- container -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

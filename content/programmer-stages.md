@@ -1,6 +1,11 @@
 Title: Stages Of Being A Programmer
 Date: 2021-08-30 10:48:00
-Category: General
+Modified: 2021-08-30 10:48:00
+Category: 
+Tags: 
+Slug: 
+Summary: 
+Status: published
 	
 	1. I don't know anything
 	2. I know stuff and can see where I can fix things without them being pointed out

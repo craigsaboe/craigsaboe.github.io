@@ -1,6 +1,11 @@
 Title: Pull a list of filenames in a UNC path
 Date: 2021-11-10 9:22:00
-Category: General
+Modified: 2021-11-10 9:22:00
+Category: 
+Tags: 
+Slug: 
+Summary: 
+Status: published
 
 * To get the text list of files in a directory, you can normally do: <code>dir > filenames.txt</code>
 * However, the Windows CLI can't use a UNC path as the current dir, so you need to use the Powershell CLI.  

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         {% block head %}
         <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
@@ -8,8 +8,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">    
         
+        <!-- Bootstrap + Site CSS-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <link href="{{ SITEURL }}/theme/static/css/style.css" rel="stylesheet" />
+        <link href="{{ SITEURL }}/theme/style.css" rel="stylesheet" />
+
 	    {% if FAVICON %}
 	    <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="image/x-icon" />
 	    {% endif %}
@@ -40,32 +42,39 @@
         {% endblock head %}
     </head>
 
-    <body id="index" class="archive">
+    <body id="index">
         <div class="container">
-            <div class="header">
-                <h3 class="text-muted"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h3>
-				<h2 class="text-muted">{{ SITESUBTITLE }}</h2>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="{{ SITEURL }}">Home</a></li>
-                {% for p in pages %}
-                    <li{% if p == page %} class="nav-item active"{% endif %}><a class="nav-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-                {% endfor %}
-                    <li class="nav-item" {% block archclass %}{{ ARCHCLASS }}{% endblock archclass %}><a class="nav-link" href="{{ SITEURL }}/archives.html">Archives</a></li>
-                </ul>                
-             </div>
+
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+                <div class="container">
+                  <a class="navbar-brand" href="{{ SITEURL }}">\\ {{ SITENAME }}</a>                  
+                  <div class="navbar-expand" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ SITEURL }}">Home</a>
+                        </li>
+                        {% for p in pages %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if p == page %}active{% endif %}" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                        </li>
+                        {% endfor %}
+                        <li class="nav-item" {% block archclass %}{{ ARCHCLASS }}{% endblock archclass %}>
+                            <a class="nav-link" href="{{ SITEURL }}/archives.html">Archives</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+
             {% block content %}
             {% endblock %}
+            
             <footer id="contentinfo" class="footer">
-                    <nav class="pull-right bottom-nav">
-                        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">RSS</a>
-                    </nav>
-                    <address id="about" class="vcard body">
-                    &copy; <a href="{{SITEURL}}">{{SITENAME}}</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
-                    </address><!-- /#about -->
+                &copy; <a href="{{SITEURL}}">{{SITENAME}}</a> - proudly powered by <a href="http://getpelican.com/">Pelican</a>
             </footer><!-- /#contentinfo -->
         </div><!-- container -->
 		{% include 'analytics.html' %}
-                {% include 'piwik.html' %}
+        {% include 'piwik.html' %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </body>
 </html>

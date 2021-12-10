@@ -1,6 +1,11 @@
 Title: Log Parser Studio + Log Parser 2.2
 Date: 2021-08-30 10:48:00
-Category: General
+Modified: 2021-08-30 10:48:00
+Category: 
+Tags: 
+Slug: 
+Summary: 
+Status: published
 
 * Log Parser is a CLI tool for parsing text-based data that can handle a wide range of sources
 * Log Parser Studio (LPS) is a GUI for that CLI because it sucks trying to remember long CLI arg strings like: <code>LogParser "SELECT TimeGenerated, SourceName, EventCategoryName, Message INTO report.txt FROM Security WHERE EventID = 528 AND SID LIKE '%TESTUSER%'" -resolveSIDs:ON</code>

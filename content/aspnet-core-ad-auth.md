@@ -5,7 +5,7 @@ Category: Python
 Tags: pelican, publishing
 Slug: ad-group-authentication-asp-net-core-app
 Summary: Authenticate Users By AD Group In An ASP.NET Core App
-Status: draft
+Status: published
 
 
 To restrict access to an ASP.NET Core application via Active Directory group membership:

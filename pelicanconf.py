@@ -3,7 +3,7 @@
 
 AUTHOR = 'Craig Saboe'
 SITENAME = "Craig's Blog"
-SITEURL = 'http://localhost:8000'
+SITEURL = ''
 THEME = 'themes\mytheme'
 PATH = 'content'
 

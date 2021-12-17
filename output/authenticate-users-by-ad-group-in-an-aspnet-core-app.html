@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Authenticate Users By AD Group In An ASP.NET Core App - Craig's Blog</title>
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link href="http://localhost:8000/theme/static/css/style.css" rel="stylesheet" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <h3 class="text-muted"><a href="http://localhost:8000">Craig's Blog</a></h3>
+				<h2 class="text-muted"></h2>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="http://localhost:8000">Home</a></li>
+                    <li class="nav-item" ><a class="nav-link" href="http://localhost:8000/archives.html">Archives</a></li>
+                </ul>                
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://localhost:8000/authenticate-users-by-ad-group-in-an-aspnet-core-app.html" rel="bookmark"
+         title="Permalink to Authenticate Users By AD Group In An ASP.NET Core App">Authenticate Users By AD Group In An ASP.NET Core App</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <div class="highlight"><pre><span></span><code><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Collections</span><span class="o">.</span><span class="n">Generic</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Linq</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">Authorization</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">Builder</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">Hosting</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">Mvc</span><span class="o">.</span><span class="n">Authorization</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">Server</span><span class="o">.</span><span class="n">IISIntegration</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">Extensions</span><span class="o">.</span><span class="n">Configuration</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">Extensions</span><span class="o">.</span><span class="n">DependencyInjection</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">Extensions</span><span class="o">.</span><span class="n">Hosting</span><span class="p">;</span>
+
+<span class="n">namespace</span> <span class="n">Boilerplate</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="k">class</span> <span class="n">Startup</span>
+    <span class="p">{</span>
+        <span class="n">public</span> <span class="n">Startup</span><span class="p">(</span><span class="n">IConfiguration</span> <span class="n">configuration</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Configuration</span> <span class="o">=</span> <span class="n">configuration</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">public</span> <span class="n">IConfiguration</span> <span class="n">Configuration</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="o">//</span> <span class="n">This</span> <span class="n">method</span> <span class="n">gets</span> <span class="n">called</span> <span class="n">by</span> <span class="n">the</span> <span class="n">runtime</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">method</span> <span class="n">to</span> <span class="n">add</span> <span class="n">services</span> <span class="n">to</span> <span class="n">the</span> <span class="n">container</span><span class="o">.</span>
+        <span class="n">public</span> <span class="n">void</span> <span class="n">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">IISDefaults</span><span class="o">.</span><span class="n">AuthenticationScheme</span><span class="p">);</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddAuthorization</span><span class="p">(</span><span class="n">options</span> <span class="o">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">options</span><span class="o">.</span><span class="n">AddPolicy</span><span class="p">(</span><span class="s2">&quot;ADRoleOnly&quot;</span><span class="p">,</span> <span class="n">policy</span> <span class="o">=&gt;</span> <span class="n">policy</span><span class="o">.</span><span class="n">RequireRole</span><span class="p">(</span><span class="s2">&quot;MYDOMAIN</span><span class="se">\\</span><span class="s2">SOMEADGROUP&quot;</span><span class="p">));</span>
+            <span class="p">});</span>
+            <span class="o">...</span>
+            <span class="n">services</span><span class="o">.</span><span class="n">AddMvc</span><span class="p">(</span><span class="n">config</span> <span class="o">=&gt;</span>
+            <span class="p">{</span>
+                <span class="k">var</span> <span class="n">policy</span> <span class="o">=</span> <span class="n">new</span> <span class="n">AuthorizationPolicyBuilder</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">RequireAuthenticatedUser</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">Build</span><span class="p">();</span>
+
+                <span class="n">config</span><span class="o">.</span><span class="n">Filters</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">new</span> <span class="n">AuthorizeFilter</span><span class="p">(</span><span class="n">policy</span><span class="p">));</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="o">//</span> <span class="n">This</span> <span class="n">method</span> <span class="n">gets</span> <span class="n">called</span> <span class="n">by</span> <span class="n">the</span> <span class="n">runtime</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">method</span> <span class="n">to</span> <span class="n">configure</span> <span class="n">the</span> <span class="n">HTTP</span> <span class="n">request</span> <span class="n">pipeline</span><span class="o">.</span>
+        <span class="n">public</span> <span class="n">void</span> <span class="n">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IWebHostEnvironment</span> <span class="n">env</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">app</span><span class="o">.</span><span class="n">UseDeveloperExceptionPage</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">app</span><span class="o">.</span><span class="n">UseExceptionHandler</span><span class="p">(</span><span class="s2">&quot;/Home/Error&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">app</span><span class="o">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+
+            <span class="n">app</span><span class="o">.</span><span class="n">UseRouting</span><span class="p">();</span>
+
+            <span class="n">app</span><span class="o">.</span><span class="n">UseAuthorization</span><span class="p">();</span>
+
+            <span class="n">app</span><span class="o">.</span><span class="n">UseStatusCodePages</span><span class="p">(</span><span class="n">async</span> <span class="n">context</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">HttpContext</span><span class="o">.</span><span class="n">Response</span><span class="o">.</span><span class="n">StatusCode</span> <span class="o">==</span> <span class="mi">403</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="o">//</span> <span class="n">your</span> <span class="n">redirect</span>
+                    <span class="n">context</span><span class="o">.</span><span class="n">HttpContext</span><span class="o">.</span><span class="n">Response</span><span class="o">.</span><span class="n">Redirect</span><span class="p">(</span><span class="s2">&quot;/Home/Error&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+
+            <span class="n">app</span><span class="o">.</span><span class="n">UseEndpoints</span><span class="p">(</span><span class="n">endpoints</span> <span class="o">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">endpoints</span><span class="o">.</span><span class="n">MapControllerRoute</span><span class="p">(</span>
+                    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+                    <span class="n">pattern</span><span class="p">:</span> <span class="s2">&quot;{controller=Home}/{action=Index}/{id?}&quot;</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong> Apply to given controllers... </strong></p>
+<div class="highlight"><pre><span></span><code>namespace Boilerplate.Controllers
+{
+    [Authorize(Policy = &quot;ADRoleOnly&quot;)]
+    public class HomeController : Controller
+....
+</code></pre></div>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2021-12-01T14:07:00-05:00">
+      Wed 01 December 2021
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="http://localhost:8000/author/craig-saboe.html">Craig Saboe</a>
+    </address> in <a href="http://localhost:8000/category/general.html">General</a> Tagged   </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://localhost:8000/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="http://localhost:8000">Craig's Blog</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    </body>
+</html>

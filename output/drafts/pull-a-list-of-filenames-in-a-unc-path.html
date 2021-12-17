@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pull a list of filenames in a UNC path - Craig's Blog</title>
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link href="http://localhost:8000/theme/static/css/style.css" rel="stylesheet" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <h3 class="text-muted"><a href="http://localhost:8000">Craig's Blog</a></h3>
+				<h2 class="text-muted"></h2>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="http://localhost:8000">Home</a></li>
+                    <li class="nav-item" ><a class="nav-link" href="http://localhost:8000/archives.html">Archives</a></li>
+                </ul>                
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://localhost:8000/drafts/pull-a-list-of-filenames-in-a-unc-path.html" rel="bookmark"
+         title="Permalink to Pull a list of filenames in a UNC path">Pull a list of filenames in a UNC path</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <ul>
+<li>To get the text list of files in a directory, you can normally do: <code>dir &gt; filenames.txt</code></li>
+<li>However, the Windows CLI can't use a UNC path as the current dir, so you need to use the Powershell CLI.  </li>
+<li>Once in the CLI, 'cd' to the UNC path and <code>dir &gt; filenames.txt</code> will work</li>
+<li>'dir' returns a table of info along with the filenames; to just get a straight list of filenames, use <code>Get-ChildItem -Name &gt; C:\your\filename\here.txt}</code></li>
+</ul>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2021-11-10T09:22:00-05:00">
+      Wed 10 November 2021
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="http://localhost:8000/author/craig-saboe.html">Craig Saboe</a>
+    </address> in <a href="http://localhost:8000/category/general.html">General</a> Tagged   </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://localhost:8000/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="http://localhost:8000">Craig's Blog</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    </body>
+</html>

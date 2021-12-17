@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Log Parser Studio + Log Parser 2.2 - Craig's Blog</title>
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        
+        <!-- Bootstrap + Site CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link href="http://localhost:8000/theme/style.css" rel="stylesheet" />
+
+    </head>
+
+    <body id="index">
+        <div class="container">
+
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+                <div class="container">
+                  <a class="navbar-brand" href="http://localhost:8000">\\ Craig's Blog</a>                  
+                  <div class="navbar-expand" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="http://localhost:8000">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="http://localhost:8000/pages/about-me.html">About Me</a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="http://localhost:8000/archives.html">Archives</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://localhost:8000/log-parser-studio-log-parser-22.html" rel="bookmark"
+         title="Permalink to Log Parser Studio + Log Parser 2.2">Log Parser Studio + Log Parser 2.2</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <ul>
+<li>Log Parser is a CLI tool for parsing text-based data that can handle a wide range of sources</li>
+<li>Log Parser Studio (LPS) is a GUI for that CLI because it sucks trying to remember long CLI arg strings like: <code>LogParser "SELECT TimeGenerated, SourceName, EventCategoryName, Message INTO report.txt FROM Security WHERE EventID = 528 AND SID LIKE '%TESTUSER%'" -resolveSIDs:ON</code></li>
+</ul>
+<p>Download:
+* LP 2.2: https://www.microsoft.com/en-us/download/details.aspx?id=24659
+* LPS V2.D2: https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/Exchange/16744/1/LPSV2.D2.zip</p>
+<p>Notes:
+* Web server log parsing:
+    * There are a few different log types for web server logs, especially IIS. Which one to use for standard IIS?</p>
+<p>Docs:
+* LP 2.2 Docs: C:\Program Files (x86)\Log Parser 2.2\LogParser.chm &gt; esp. under "Reference"</p>
+<p>Links:
+* "Using LogParser 2.2 to Parse IIS Logs and Other Logs" - http://aspalliance.com/articleViewer.aspx?aId=1714&amp;pId=-1
+* "How Log Parser 2.2 Works" - https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb878032(v=technet.10)?redirectedfrom=MSDN
+* "Log Parser 2.2 and ASP.NET" - https://support.microsoft.com/en-us/topic/log-parser-2-2-and-asp-net-37531636-1cf5-dc52-f12a-6a9252155631
+* "Introducing: Log Parser Studio" - https://techcommunity.microsoft.com/t5/exchange-team-blog/introducing-log-parser-studio/ba-p/601131</p>
+<p>Ex:
+* SELECT TOP 10 * FROM '[LOGFILEPATH]'
+* SELECT * FROM '[LOGFILEPATH]' WHERE [AllXml] like '%2600:387:3:803::28%'</p>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2021-08-30T10:48:00-04:00">
+      Mon 30 August 2021
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="http://localhost:8000/author/craig-saboe.html">Craig Saboe</a>
+    </address> in <a href="http://localhost:8000/category/misc.html">misc</a> Tagged   </footer><!-- /.post-info -->
+</section>
+            
+            <footer id="contentinfo" class="footer">
+                &copy; <a href="http://localhost:8000">Craig's Blog</a> - proudly powered by <a href="http://getpelican.com/">Pelican</a>
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    </body>
+</html>

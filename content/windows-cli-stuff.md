@@ -4,7 +4,7 @@ Modified: 2021-12-02 15:22:00
 Category: 
 Tags: 
 Slug: 
-Summary: 
+Summary: Random useful Windows CLI tidbits.
 Status: published
 
 ### Merge multiple files:

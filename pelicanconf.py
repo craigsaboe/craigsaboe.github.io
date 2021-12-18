@@ -12,7 +12,7 @@ TIMEZONE = 'America/New_York'
 DEFAULT_LANG = 'en'
 
 # Google Analytics
-GOOGLE_ANALYTICS = None
+GOOGLE_ANALYTICS = 'UA-5219189-3'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

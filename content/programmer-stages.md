@@ -5,7 +5,7 @@ Category:
 Tags: 
 Slug: 
 Summary: 
-Status: published
+Status: draft
 	
 	1. I don't know anything
 	2. I know stuff and can see where I can fix things without them being pointed out

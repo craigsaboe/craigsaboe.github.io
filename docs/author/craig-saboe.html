@@ -18,7 +18,45 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/setting-up-azure-appinsights.html">Setting up Azure AppInsights</a></h1>
+                    <h1 class="entry-title"><a href="/starting-up-a-new-azure-app-service-instance.html">Starting Up a New Azure App Service Instance</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2022-07-07T15:11:00+02:00">
+                Published: Thu 07 July 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/craig-saboe.html">Craig Saboe</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info --><ul>
+<li>Create &gt; Marketplace &gt; "Web App for Containers"</li>
+<li>Publish: [x] Docker Container</li>
+<li>App Service Plan:</li>
+<li>If you don't have one, can be helpful to define one for general use that maps to something like the B1:1 instance or whatever is the lowest-end dev box (for testing purposes) - you can bump it to a higher level for testing or prod later on.</li>
+</ul>
+<p>Setting Up CD From Azure Container Repo
+* Deployment &gt; Deployment Center
+* Settings:
+  * Registry source: ACR
+  * Authentication: Admin credentials
+  * Registry: [your ACR's name]
+  * Image: [image set in that registry]
+  * Tag: [latest is probably best for CD, I think]
+  * Continuous Deployment: [on]</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/setting-up-azure-appinsights.html" rel="bookmark"
+                           title="Permalink to Setting up Azure AppInsights">Setting up Azure AppInsights</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2022-05-25T11:50:00+02:00">
                 Published: Wed 25 May 2022
@@ -29,7 +67,7 @@
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
 
-</footer><!-- /.post-info --><h1>Config</h1>
+</footer><!-- /.post-info -->                <h1>Config</h1>
 <ul>
 <li>Create Resource</li>
 <li>Get Connection string</li>
@@ -46,14 +84,10 @@
 </ul>
 <h2>Setup</h2>
 <div class="highlight"><pre><span></span><code>dotnet add package Azure.Monitor.OpenTelemetry.Exporter --prerelease
-dotnet add package OpenTelemetry.Instrumentation.AspNetCore --prerelease
-dotnet add package OpenTelemetry.Extensions.Hosting --prerelease
-</code></pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+dotnet add …</code></pre></div>
+                <a class="readmore" href="/setting-up-azure-appinsights.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

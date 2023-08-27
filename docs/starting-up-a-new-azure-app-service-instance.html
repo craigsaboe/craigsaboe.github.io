@@ -3,31 +3,56 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>My Blog</title>
+        <title>Starting Up a New Azure App Service Instance</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="Create > Marketplace > "Web App for Containers" Publish: [x] Docker Container App Service Plan: If you don't have one, can be helpful to define..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">My Blog</a></h1>
                 <nav><ul>
-                    <li><a href="/category/misc.html">misc</a></li>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
                     <li><a href="/category/python.html">Python</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
-<h1>Archives for My Blog</h1>
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/starting-up-a-new-azure-app-service-instance.html" rel="bookmark"
+           title="Permalink to Starting Up a New Azure App Service Instance">Starting Up a New Azure App Service Instance</a></h1>
+    </header>
 
-<dl>
-    <dt>Thu 07 July 2022</dt>
-    <dd><a href="/starting-up-a-new-azure-app-service-instance.html">Starting Up a New Azure App Service Instance</a></dd>
-    <dt>Wed 25 May 2022</dt>
-    <dd><a href="/setting-up-azure-appinsights.html">Setting up Azure AppInsights</a></dd>
-    <dt>Wed 01 December 2021</dt>
-    <dd><a href="/ad-group-authentication-asp-net-core-app.html">Authenticate Users By AD Group In An ASP.NET Core App</a></dd>
-    <dt>Mon 30 August 2021</dt>
-    <dd><a href="/pelican.html">Pelican</a></dd>
-</dl>
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2022-07-07T15:11:00+02:00">
+                Published: Thu 07 July 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/craig-saboe.html">Craig Saboe</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>Create &gt; Marketplace &gt; "Web App for Containers"</li>
+<li>Publish: [x] Docker Container</li>
+<li>App Service Plan:</li>
+<li>If you don't have one, can be helpful to define one for general use that maps to something like the B1:1 instance or whatever is the lowest-end dev box (for testing purposes) - you can bump it to a higher level for testing or prod later on.</li>
+</ul>
+<p>Setting Up CD From Azure Container Repo
+* Deployment &gt; Deployment Center
+* Settings:
+  * Registry source: ACR
+  * Authentication: Admin credentials
+  * Registry: [your ACR's name]
+  * Image: [image set in that registry]
+  * Tag: [latest is probably best for CD, I think]
+  * Continuous Deployment: [on]</p>
+    </div><!-- /.entry-content -->
+
+  </article>
 </section>
         <section id="extras" class="body">
                 <div class="blogroll">

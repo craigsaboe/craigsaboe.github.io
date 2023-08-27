@@ -1,8 +1,5 @@
----
-layout: post
-title: Starting Up a New Azure App Service Instance
-author: @craigsaboe
-published: 2022-07-07 15:11:00
+Title: Starting Up a New Azure App Service Instance
+Date: 2022-07-07 15:11:00
 ---
 
 * Create > Marketplace > "Web App for Containers"

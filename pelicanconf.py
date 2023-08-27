@@ -5,7 +5,7 @@ AUTHOR = 'Craig Saboe'
 SITENAME = 'My Blog'
 SITEURL = ''
 
-PATH = 'input'
+PATH = 'contents'
 OUTPUT_PATH = 'output'
 
 TIMEZONE = 'Europe/Paris'

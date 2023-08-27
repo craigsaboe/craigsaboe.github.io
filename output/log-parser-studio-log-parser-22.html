@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>My Blog</title>
+        <title>Log Parser Studio + Log Parser 2.2</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 </head>
 
@@ -11,13 +11,18 @@
         <header id="banner" class="body">
                 <h1><a href="/">My Blog</a></h1>
                 <nav><ul>
-                    <li><a href="/category/misc.html">misc</a></li>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/log-parser-studio-log-parser-22.html" rel="bookmark"
+           title="Permalink to Log Parser Studio + Log Parser 2.2">Log Parser Studio + Log Parser 2.2</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/log-parser-studio-log-parser-22.html">Log Parser Studio + Log Parser 2.2</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2021-08-30T10:48:00-04:00">
                 Published: Mon 30 August 2021
@@ -32,7 +37,7 @@
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
 
-</footer><!-- /.post-info --><ul>
+</footer><!-- /.post-info -->      <ul>
 <li>Log Parser is a CLI tool for parsing text-based data that can handle a wide range of sources</li>
 <li>Log Parser Studio (LPS) is a GUI for that CLI because it sucks trying to remember long CLI arg strings like: <code>LogParser "SELECT TimeGenerated, SourceName, EventCategoryName, Message INTO report.txt FROM Security WHERE EventID = 528 AND SID LIKE '%TESTUSER%'" -resolveSIDs:ON</code></li>
 </ul>
@@ -51,8 +56,11 @@
 * "Introducing: Log Parser Studio" - https://techcommunity.microsoft.com/t5/exchange-team-blog/introducing-log-parser-studio/ba-p/601131</p>
 <p>Ex:
 * SELECT TOP 10 * FROM '[LOGFILEPATH]'
-* SELECT * FROM '[LOGFILEPATH]' WHERE [AllXml] like '%2600:387:3:803::28%'</p>                </article>
-            </aside><!-- /#featured -->
+* SELECT * FROM '[LOGFILEPATH]' WHERE [AllXml] like '%2600:387:3:803::28%'</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

@@ -12,90 +12,12 @@
                 <h1><a href="/">My Blog</a></h1>
                 <nav><ul>
                     <li class="active"><a href="/category/misc.html">misc</a></li>
-                    <li><a href="/category/python.html">Python</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/starting-up-a-new-azure-app-service-instance.html">Starting Up a New Azure App Service Instance</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2022-07-07T15:11:00-04:00">
-                Published: Thu 07 July 2022
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/craig-saboe.html">Craig Saboe</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info --><ul>
-<li>Create &gt; Marketplace &gt; "Web App for Containers"</li>
-<li>Publish: [x] Docker Container</li>
-<li>App Service Plan:</li>
-<li>If you don't have one, can be helpful to define one for general use that maps to something like the B1:1 instance or whatever is the lowest-end dev box (for testing purposes) - you can bump it to a higher level for testing or prod later on.</li>
-</ul>
-<p>Setting Up CD From Azure Container Repo
-* Deployment &gt; Deployment Center
-* Settings:
-  * Registry source: ACR
-  * Authentication: Admin credentials
-  * Registry: [your ACR's name]
-  * Image: [image set in that registry]
-  * Tag: [latest is probably best for CD, I think]
-  * Continuous Deployment: [on]</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/setting-up-azure-appinsights.html" rel="bookmark"
-                           title="Permalink to Setting up Azure AppInsights">Setting up Azure AppInsights</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2022-05-25T11:50:00-04:00">
-                Published: Wed 25 May 2022
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/craig-saboe.html">Craig Saboe</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->                <h1>Config</h1>
-<ul>
-<li>Create Resource</li>
-<li>Get Connection string</li>
-<li>Add conn string to appsettings.json</li>
-</ul>
-<div class="highlight"><pre><span></span><code>  &quot;ApplicationInsights&quot;: {
-    &quot;ConnectionString&quot; : &quot;Copy connection string from Application Insights Resource Overview&quot;
-  },
-</code></pre></div>
-
-<h1>OpenTelemetry</h1>
-<ul>
-<li>New spec that's "vendor neutral", MS is going to push that as internals for AppInsight integration</li>
-</ul>
-<h2>Setup</h2>
-<div class="highlight"><pre><span></span><code>dotnet add package Azure.Monitor.OpenTelemetry.Exporter --prerelease
-dotnet add …</code></pre></div>
-                <a class="readmore" href="/setting-up-azure-appinsights.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/pelican.html" rel="bookmark"
-                           title="Permalink to Pelican">Pelican</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <h1 class="entry-title"><a href="/log-parser-studio-log-parser-22.html">Log Parser Studio + Log Parser 2.2</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2021-08-30T10:48:00-04:00">
                 Published: Mon 30 August 2021
@@ -110,12 +32,27 @@ dotnet add …</code></pre></div>
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
 
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/pelican.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+</footer><!-- /.post-info --><ul>
+<li>Log Parser is a CLI tool for parsing text-based data that can handle a wide range of sources</li>
+<li>Log Parser Studio (LPS) is a GUI for that CLI because it sucks trying to remember long CLI arg strings like: <code>LogParser "SELECT TimeGenerated, SourceName, EventCategoryName, Message INTO report.txt FROM Security WHERE EventID = 528 AND SID LIKE '%TESTUSER%'" -resolveSIDs:ON</code></li>
+</ul>
+<p>Download:
+* LP 2.2: https://www.microsoft.com/en-us/download/details.aspx?id=24659
+* LPS V2.D2: https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/Exchange/16744/1/LPSV2.D2.zip</p>
+<p>Notes:
+* Web server log parsing:
+    * There are a few different log types for web server logs, especially IIS. Which one to use for standard IIS?</p>
+<p>Docs:
+* LP 2.2 Docs: C:\Program Files (x86)\Log Parser 2.2\LogParser.chm &gt; esp. under "Reference"</p>
+<p>Links:
+* "Using LogParser 2.2 to Parse IIS Logs and Other Logs" - http://aspalliance.com/articleViewer.aspx?aId=1714&amp;pId=-1
+* "How Log Parser 2.2 Works" - https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb878032(v=technet.10)?redirectedfrom=MSDN
+* "Log Parser 2.2 and ASP.NET" - https://support.microsoft.com/en-us/topic/log-parser-2-2-and-asp-net-37531636-1cf5-dc52-f12a-6a9252155631
+* "Introducing: Log Parser Studio" - https://techcommunity.microsoft.com/t5/exchange-team-blog/introducing-log-parser-studio/ba-p/601131</p>
+<p>Ex:
+* SELECT TOP 10 * FROM '[LOGFILEPATH]'
+* SELECT * FROM '[LOGFILEPATH]' WHERE [AllXml] like '%2600:387:3:803::28%'</p>                </article>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

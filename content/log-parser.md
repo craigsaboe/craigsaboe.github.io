@@ -1,10 +1,3 @@
----
-layout: post
-title: Log Parser Studio + Log Parser 2.2
-author: @craigsaboe
-published: 2021-08-30 10:48:00
----
-
 Title: Log Parser Studio + Log Parser 2.2
 Date: 2021-08-30 10:48:00
 Modified: 2021-08-30 10:48:00

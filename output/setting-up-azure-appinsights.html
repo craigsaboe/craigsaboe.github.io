@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>Setting up Azure AppInsights</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="Config Create Resource Get Connection string Add conn string to appsettings.json "ApplicationInsights": { "ConnectionString" : "Copy connection..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">My Blog</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/setting-up-azure-appinsights.html" rel="bookmark"
+           title="Permalink to Setting up Azure AppInsights">Setting up Azure AppInsights</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2022-05-25T11:50:00+02:00">
+                Published: Wed 25 May 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/craig-saboe.html">Craig Saboe</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <h1>Config</h1>
+<ul>
+<li>Create Resource</li>
+<li>Get Connection string</li>
+<li>Add conn string to appsettings.json</li>
+</ul>
+<div class="highlight"><pre><span></span><code>  &quot;ApplicationInsights&quot;: {
+    &quot;ConnectionString&quot; : &quot;Copy connection string from Application Insights Resource Overview&quot;
+  },
+</code></pre></div>
+
+<h1>OpenTelemetry</h1>
+<ul>
+<li>New spec that's "vendor neutral", MS is going to push that as internals for AppInsight integration</li>
+</ul>
+<h2>Setup</h2>
+<div class="highlight"><pre><span></span><code>dotnet add package Azure.Monitor.OpenTelemetry.Exporter --prerelease
+dotnet add package OpenTelemetry.Instrumentation.AspNetCore --prerelease
+dotnet add package OpenTelemetry.Extensions.Hosting --prerelease
+</code></pre></div>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

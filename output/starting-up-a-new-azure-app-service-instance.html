@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>Starting Up a New Azure App Service Instance</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="Create > Marketplace > "Web App for Containers" Publish: [x] Docker Container App Service Plan: If you don't have one, can be helpful to define..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">My Blog</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/starting-up-a-new-azure-app-service-instance.html" rel="bookmark"
+           title="Permalink to Starting Up a New Azure App Service Instance">Starting Up a New Azure App Service Instance</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2022-07-07T15:11:00+02:00">
+                Published: Thu 07 July 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/craig-saboe.html">Craig Saboe</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>Create &gt; Marketplace &gt; "Web App for Containers"</li>
+<li>Publish: [x] Docker Container</li>
+<li>App Service Plan:</li>
+<li>If you don't have one, can be helpful to define one for general use that maps to something like the B1:1 instance or whatever is the lowest-end dev box (for testing purposes) - you can bump it to a higher level for testing or prod later on.</li>
+</ul>
+<p>Setting Up CD From Azure Container Repo
+* Deployment &gt; Deployment Center
+* Settings:
+  * Registry source: ACR
+  * Authentication: Admin credentials
+  * Registry: [your ACR's name]
+  * Image: [image set in that registry]
+  * Tag: [latest is probably best for CD, I think]
+  * Continuous Deployment: [on]</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

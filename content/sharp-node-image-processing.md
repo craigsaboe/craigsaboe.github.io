@@ -5,6 +5,7 @@ Category:
 Tags: 
 Slug: 
 Summary:
+Status: draft
 ---
 
 ![SharpLogo](images/sharp-node-image-processing/1.png)

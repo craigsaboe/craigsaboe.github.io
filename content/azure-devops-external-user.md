@@ -5,7 +5,7 @@ Category:
 Tags: 
 Slug: 
 Summary: 
-Status: published
+Status: draft
 
 Walkthrough For Invited User
 

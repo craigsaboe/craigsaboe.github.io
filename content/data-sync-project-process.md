@@ -5,7 +5,7 @@ Category:
 Tags: 
 Slug: 
 Summary: 
-Status: published
+Status: draft
 
 ![Steps1](images/data-sync-project-process/1.png)
 ![Steps2](images/data-sync-project-process/2.png)

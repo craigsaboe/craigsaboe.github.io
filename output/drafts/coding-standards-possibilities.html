@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Coding Standards Possibilities</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">My Blog</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/drafts/coding-standards-possibilities.html" rel="bookmark"
+           title="Permalink to Coding Standards Possibilities">Coding Standards Possibilities</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-08-29T10:48:00-04:00">
+                Published: Tue 29 August 2023
+        </abbr>
+		<br />
+        <abbr class="modified" title="2023-08-29T10:48:00-04:00">
+                Updated: Tue 29 August 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/craig-saboe.html">Craig Saboe</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ol>
+<li>Identifiers<ol>
+<li>Auto Increment</li>
+<li>GUIDs<ol>
+<li>Pros<ol>
+<li>Prevent accidental mixups<ol>
+<li>Accidentally run a delete against the wrong table? It won't find the record</li>
+<li>Accidentally insert into the wrong table? Foreign key violation</li>
+</ol>
+</li>
+<li>Off-server generation</li>
+<li>Security - acts like a token and precludes certain attack vectors</li>
+</ol>
+</li>
+<li>Cons<ol>
+<li>Size</li>
+<li>Paging - randomness</li>
+<li>Less user-friendly - can't be remembered</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Natural Keys<ol>
+<li>Can be tuples</li>
+<li>Do not be afraid to use!</li>
+<li>Pros<ol>
+<li>Demonstrates intent</li>
+<li>No separate unique constraint</li>
+</ol>
+</li>
+<li>Cons<ol>
+<li>Size (when relating)</li>
+<li>Performance cost (based on size)</li>
+<li>Clunkiness in management</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>[Friendly] "Names"<ol>
+<li>Enumeration</li>
+<li>Examples: roles, locations</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Databases<ol>
+<li>Soft Deletes<ol>
+<li>Should never be the default</li>
+<li>Break constraints/integrity</li>
+<li>Handle formally/explicitly never "automatically"<ol>
+<li>Do not implement via CASCADE</li>
+</ol>
+</li>
+<li>Approach:<ol>
+<li>Graveyard</li>
+<li>Event sourcing</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Event Sourcing<ol>
+<li>Log every transformation</li>
+<li>"Updated At" and "Updated By" not enough</li>
+</ol>
+</li>
+<li>Constraints<ol>
+<li>Start at data level</li>
+<li>In a perfect world, every representable state should be valid at the application level<ol>
+<li>Allows distributed systems to function reliably without requiring perfect/consistent validation</li>
+</ol>
+</li>
+<li>Split tables horizontally<ol>
+<li>No mutually/dependently-non-nullable fields<ol>
+<li>If you have 2+ fields that are either all null or all should have a value, split them out into another table with the same key as the original table and declare them non-nullable then join</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Encoding CHECK as COMPUTED in MySQL</li>
+</ol>
+</li>
+<li>Lazy loading/iteration<ol>
+<li>Don't fetch the entire result set</li>
+</ol>
+</li>
+<li>Rarely [never] use DISTINCT<ol>
+<li>Pretty much only has the possibility of hiding logical errors</li>
+</ol>
+</li>
+<li>Rarely [never] use UNION (versus UNION ALL)<ol>
+<li>Implicit DISTINCT</li>
+</ol>
+</li>
+<li>Dynamic SQL<ol>
+<li>Fixed strings only</li>
+</ol>
+</li>
+<li>Parameterization</li>
+<li>Character encoding/collation</li>
+<li>Strict Mode</li>
+<li>MySQL Table Engine<ol>
+<li>Default is dependent on version</li>
+<li>Never(?) use MyISAM</li>
+</ol>
+</li>
+<li>Should we be considering Postgres?<ol>
+<li>CHECK constraint support</li>
+<li>Timezone support</li>
+</ol>
+</li>
+<li>ORDER BY<ol>
+<li>Make sure combination of columns is unique, especially if using for pagination</li>
+<li>Order is non-deterministic in the absence of ORDER BY</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Layers<ol>
+<li>Data Access (ORM)<ol>
+<li>Data de/serialization</li>
+</ol>
+</li>
+<li>Logic/Business (Models/Entities)<ol>
+<li>Assertions</li>
+<li>Relationships</li>
+<li>Actions/transformations/behaviors</li>
+</ol>
+</li>
+<li>Control (Controllers)<ol>
+<li>Input de/serialization<ol>
+<li>Convert "stringly typed" (HTTP) into structured data</li>
+</ol>
+</li>
+<li>Routing</li>
+<li>Authorization?</li>
+</ol>
+</li>
+<li>Presentation (Templates)<ol>
+<li>Display</li>
+<li>Input</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Schedulers<ol>
+<li>Data-driven versus Mutation/Impure<ol>
+<li>Never structure a job assuming it runs reliably/on schedule<ol>
+<li>Idempotence</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Miscellaneous<ol>
+<li>NO magic strings/number<ol>
+<li>Define a constant</li>
+<li>Use an enumeration</li>
+</ol>
+</li>
+<li>Limit mutable state</li>
+<li>Purity<ol>
+<li>Prefer static classes/methods<ol>
+<li>If a class doesn't encapsulate mutable state there's no reason to instantiate</li>
+<li>Generally nonsensical: $x = new X(); $x-&gt;x();</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Side effects are an implied portion of the return type</li>
+<li>Reduce [inappropriate] redundancy<ol>
+<li>Focus on the semantics around the ability to vary independently - if two things should be bound together, figure out a way to bind them or maintainability suffers</li>
+</ol>
+</li>
+<li>Timezones<ol>
+<li>Always store and serve in UTC, format client side</li>
+<li>When comparing "day" make sure UTC is shifted to local</li>
+<li>Map to local client-side, and/or store a configuration application-side for the "application timezone"</li>
+</ol>
+</li>
+<li>Centralize/abstract "base URL" if needed - don't concatenate explicitly at every URL callsite<ol>
+<li>HTML base tag</li>
+<li>Extend jQuery.ajax or whatever library</li>
+</ol>
+</li>
+<li>Boolean blindness<ol>
+<li>Prefer constants/enumerations when appropriate</li>
+<li>Propagate evidence - value or null versus true or false</li>
+</ol>
+</li>
+<li>Configuration<ol>
+<li>Avoid hard-coding environment specific values<ol>
+<li>Emails</li>
+<li>Domains/URLs</li>
+</ol>
+</li>
+<li>Break up flags very granularly - prefer separate flags per feature rather than switching on, for example, "is production"</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>User Experience<ol>
+<li>Never fail silently</li>
+</ol>
+</li>
+<li>Sending email<ol>
+<li>Include headers to indicate that another automated system should not reply (prevent email loops/wars), and check for those headers on inbound emails before sending a reply</li>
+</ol>
+</li>
+</ol>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -5,7 +5,7 @@ Category:
 Tags: 
 Slug: 
 Summary: 
-Status: published
+Status: draft
 
 
 (How/what/when are we documenting?  What are the rules/processes for creating and maintaining documentation?  How do we make sure that the documentation is actually useful?  Those types of logistical things.)

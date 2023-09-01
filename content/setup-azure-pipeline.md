@@ -1,4 +1,11 @@
-
+Title: Setting Up Azure Pipelines
+Date: 2023-09-01 10:48:00
+Modified: 2023-09-01 10:48:00
+Category: 
+Tags: 
+Slug: 
+Summary: 
+Status: draft
 
 This set of tutorials covers how to set up integration between Azure DevOps and Microsoft Azure for the purposes of continuous integration and delivery.
 

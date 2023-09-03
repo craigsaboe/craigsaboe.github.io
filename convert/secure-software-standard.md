@@ -1,10 +1,3 @@
----
-layout: post
-title: PCI Secure Software Standard
-author: @craigsaboe
-published: 2021-12-17 11:50:00
----
-
 Title: PCI Secure Software Standard
 Date: 2021-12-17 11:50:00
 Category: 

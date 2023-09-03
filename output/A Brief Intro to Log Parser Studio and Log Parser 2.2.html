@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>My Blog</title>
+	<meta name="description" content="">
+	<meta name="author" content="Craig Saboe">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+
+
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/">My Blog</a>
+			<ul class="nav">
+					<li class="active"><a href="/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://getpelican.com/">Pelican</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="#">You can add links in your config file</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Log Parser Studio + Log Parser 2.2</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/A Brief Intro to Log Parser Studio and Log Parser 2.2.html">2021-08-30 10:48:00-04:00</a>
+by <a class="url fn" href="/author/craig-saboe.html">Craig Saboe </a>
+ in <a href="/category/misc.html">misc</a>
+</div>
+		<div><h1>About</h1>
+<ul>
+<li>Log Parser is a CLI tool for parsing text-based data that can handle a wide range of sources</li>
+<li>Log Parser Studio (LPS) is a GUI for that CLI because it sucks trying to remember long CLI arg strings like:</li>
+</ul>
+<p><code>LogParser "SELECT TimeGenerated, SourceName, EventCategoryName, Message INTO report.txt FROM Security WHERE EventID = 528 AND SID LIKE '%TESTUSER%'" -resolveSIDs:ON</code></p>
+<h1>Download</h1>
+<ul>
+<li>LP 2.2: https://www.microsoft.com/en-us/download/details.aspx?id=24659</li>
+<li>LPS V2.D2: https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/Exchange/16744/1/LPSV2.D2.zip</li>
+</ul>
+<h1>Notes</h1>
+<ul>
+<li>Web server log parsing:<ul>
+<li>There are a few different log types for web server logs, especially IIS. Which one to use for standard IIS?</li>
+</ul>
+</li>
+</ul>
+<h1>Docs</h1>
+<ul>
+<li>LP 2.2 Docs: C:\Program Files (x86)\Log Parser 2.2\LogParser.chm &gt; esp. under "Reference"</li>
+</ul>
+<h1>Links</h1>
+<ul>
+<li>"Using LogParser 2.2 to Parse IIS Logs and Other Logs" - http://aspalliance.com/articleViewer.aspx?aId=1714&amp;pId=-1</li>
+<li>"How Log Parser 2.2 Works" - https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb878032(v=technet.10)?redirectedfrom=MSDN</li>
+<li>"Log Parser 2.2 and ASP.NET" - https://support.microsoft.com/en-us/topic/log-parser-2-2-and-asp-net-37531636-1cf5-dc52-f12a-6a9252155631</li>
+<li>"Introducing: Log Parser Studio" - https://techcommunity.microsoft.com/t5/exchange-team-blog/introducing-log-parser-studio/ba-p/601131</li>
+</ul>
+<h1>Example Queries</h1>
+<ul>
+<li>SELECT TOP 10 * FROM '[LOGFILEPATH]'</li>
+<li>SELECT * FROM '[LOGFILEPATH]' WHERE [AllXml] like '%2600:387:3:803::28%'</li>
+</ul></div>
+	</div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; Craig Saboe</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

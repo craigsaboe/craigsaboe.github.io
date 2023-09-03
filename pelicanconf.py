@@ -4,6 +4,7 @@
 AUTHOR = 'Craig Saboe'
 SITENAME = 'My Blog'
 SITEURL = ''
+THEME = 'themes/bootstrap/'
 
 PATH = 'content'
 OUTPUT_PATH = 'output'

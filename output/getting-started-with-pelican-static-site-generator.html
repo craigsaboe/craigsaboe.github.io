@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>My Blog</title>
+	<meta name="description" content="">
+	<meta name="author" content="Craig Saboe">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+
+
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/">My Blog</a>
+			<ul class="nav">
+					<li class="active"><a href="/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://getpelican.com/">Pelican</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="#">You can add links in your config file</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Getting Started with Pelican Static Site Generator</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/getting-started-with-pelican-static-site-generator.html">2021-08-30 10:48:00-04:00</a>
+by <a class="url fn" href="/author/craig-saboe.html">Craig Saboe </a>
+ in <a href="/category/misc.html">misc</a>
+</div>
+		<div><h1>Code</h1>
+<div class="highlight"><pre><span></span><code>pip install pelican
+pip install markdown (*.md pages will just be ignored without this manually installed)
+</code></pre></div>
+
+<p>(Write some compelling content)</p>
+<div class="highlight"><pre><span></span><code>pelican content
+pelican --listen
+git push \master
+git merge \master &gt;&gt; \release
+</code></pre></div>
+
+<h1>Docs</h1>
+<p>https://docs.getpelican.com/en/latest/</p>
+<p>Example Page Metadata:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="kd">super</span> <span class="n">title</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">19</span><span class="o">:</span><span class="mi">30</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Python</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">publishing</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">my</span><span class="o">-</span><span class="kd">super</span><span class="o">-</span><span class="n">post</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Alexis</span> <span class="n">Metaireau</span><span class="o">,</span> <span class="n">Conan</span> <span class="n">Doyle</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Short</span> <span class="n">version</span> <span class="k">for</span> <span class="n">index</span> <span class="n">and</span> <span class="n">feeds</span>
+</code></pre></div>
+
+<p>Other metadata options:
+|title|Title of the article or page|
+date        Publication date (e.g., YYYY-MM-DD HH:SS)
+modified    Modification date (e.g., YYYY-MM-DD HH:SS)
+tags        Content tags, separated by commas
+keywords    Content keywords, separated by commas (HTML content only)
+category    Content category (one only — not multiple)
+slug        Identifier used in URLs and translations
+author      Content author, when there is only one
+authors     Content authors, when there are multiple
+summary     Brief description of content for index pages
+lang        Content language ID (en, fr, etc.)
+translation If content is a translation of another (true or false)
+status      Content status: draft, hidden, or published
+template    Name of template to use to generate content (without extension)
+save_as     Save content to this relative file path
+url         URL to use for this article/page</p>
+<p>Markdown Formatting:
+https://daringfireball.net/projects/markdown/syntax</p></div>
+	</div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; Craig Saboe</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

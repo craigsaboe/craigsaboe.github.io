@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>My Blog</title>
+	<meta name="description" content="">
+	<meta name="author" content="Craig Saboe">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+
+
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/">My Blog</a>
+			<ul class="nav">
+					<li class="active"><a href="/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://getpelican.com/">Pelican</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="#">You can add links in your config file</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Getting Started with the Pelican Static Site Generator</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/getting-started-with-the-pelican-static-site-generator.html">2021-08-30 10:48:00-04:00</a>
+by <a class="url fn" href="/author/craig-saboe.html">Craig Saboe </a>
+ in <a href="/category/misc.html">misc</a>
+</div>
+		<div><h1>What are Static Site Generators?</h1>
+<p>Static site generators are software tools that create static HTML websites from raw data and templates. Unlike dynamic websites, which generate pages on-the-fly with each request, a static site generator builds the entire website beforehand. </p>
+<h2>Typical Workflow</h2>
+<p>Here's how a typical workflow with a static site generator might look:</p>
+<ol>
+<li>
+<p><strong>Development</strong>: </p>
+<ul>
+<li>Write your content, typically in a lightweight markup language like Markdown.</li>
+<li>Define the site's layout and appearance using templates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Generation</strong>: </p>
+<ul>
+<li>Run the static site generator to create static HTML, CSS, and JavaScript files.</li>
+</ul>
+</li>
+<li>
+<p><strong>Deployment</strong>: </p>
+<ul>
+<li>Upload the generated static files to a web server or hosting service.</li>
+</ul>
+</li>
+<li>
+<p><strong>Serving</strong>: </p>
+<ul>
+<li>Pre-generated static files are delivered to visitors' browsers without the need for server-side processing.</li>
+</ul>
+</li>
+</ol>
+<h2>Use Cases</h2>
+<p>Static site generators are popular for:
+- Blogs
+- Portfolios
+- Documentation sites
+- Other projects where content doesn't change frequently or require server-side interaction.</p>
+<h2>Popular Static Site Generators</h2>
+<ul>
+<li>Jekyll</li>
+<li>Hugo</li>
+<li>Gatsby</li>
+<li>Next.js</li>
+</ul>
+<h2>Integration</h2>
+<ul>
+<li>Version control systems like Git</li>
+<li>Headless content management systems (CMS) for more flexibility in content management.</li>
+</ul>
+<h1>Pelican</h1>
+<p>Pelican is a SSG written in Python.  It offers a simple workflow, a strong featureset and is easy to use.</p>
+<p>Setting up a static website using the Pelican static site generator involves several steps. Below are the basic steps to get you up and running:</p>
+<h2>Prerequisites</h2>
+<ul>
+<li>Python</li>
+<li>Pip (Python package installer)</li>
+<li>Optional: virtualenv for isolated Python environments</li>
+</ul>
+<h2>Installation</h2>
+<ol>
+<li>
+<p><strong>Install Pelican and Markdown</strong></p>
+<p><code>pip install pelican markdown</code></p>
+<p>Optionally, you can create a Python virtual environment before installing the packages:</p>
+<p><code>python3 -m venv myenv
+source myenv/bin/activate</code></p>
+</li>
+</ol>
+<h2>Project Setup</h2>
+<ol>
+<li>
+<p><strong>Create a New Pelican Project</strong></p>
+<p><code>pelican-quickstart</code></p>
+<p>This command will ask you a series of questions about your project and generate the project scaffolding.</p>
+</li>
+</ol>
+<h2>Content Creation</h2>
+<ol>
+<li>
+<p><strong>Create Content</strong></p>
+<p>Create new <code>.md</code> (Markdown) or <code>.rst</code> (reStructuredText) files inside the <code>content</code> folder. These will be converted into HTML pages.</p>
+<p>```
+Title: My First Post
+Date: 2023-09-03
+Category: Blog</p>
+<p>This is my first blog post!
+```</p>
+</li>
+</ol>
+<h2>Generate Site</h2>
+<ol>
+<li>
+<p><strong>Generate the Site</strong></p>
+<p>Run the following command to generate the site:</p>
+<p><code>pelican content</code></p>
+<p>This will generate the HTML files and place them in the <code>output</code> folder.</p>
+</li>
+</ol>
+<h2>Local Testing</h2>
+<ol>
+<li>
+<p><strong>Preview the Site Locally</strong></p>
+<p>Pelican comes with a simple HTTP server for local testing.  You can start this via:</p>
+<p><code>pelican --listen --autoreload</code></p>
+<p>The <code>autoreload</code> parameter will regenerate the site automatically whenever you update a page, saving you from having to stop the server and rebuild every time you make a change.</p>
+<p>Now, open your web browser and go to <code>http://localhost:8000</code> to view your site.</p>
+</li>
+</ol>
+<h2>Deployment</h2>
+<ol>
+<li>
+<p><strong>Deploy</strong></p>
+<p>Once you're happy with your site, you can deploy it. A simple way to deploy is to copy the contents of the <code>output</code> folder to your web server.</p>
+</li>
+<li>
+<p><strong>Automate Deployment (Optional)</strong></p>
+<p>You can automate the deployment using various methods such as Git hooks, CI/CD pipelines, or specialized deployment tools.</p>
+</li>
+</ol>
+<p>This is a basic guide and Pelican offers many other features like theming, plugins, and settings you can customize. For more information, you can refer to the <a href="http://docs.getpelican.com/">official documentation</a>.</p>
+<h1>Docs</h1>
+<p>https://docs.getpelican.com/en/latest/</p>
+<p>Example Page Metadata:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="kd">super</span> <span class="n">title</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">19</span><span class="o">:</span><span class="mi">30</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Python</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">publishing</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">my</span><span class="o">-</span><span class="kd">super</span><span class="o">-</span><span class="n">post</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Alexis</span> <span class="n">Metaireau</span><span class="o">,</span> <span class="n">Conan</span> <span class="n">Doyle</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Short</span> <span class="n">version</span> <span class="k">for</span> <span class="n">index</span> <span class="n">and</span> <span class="n">feeds</span>
+</code></pre></div>
+
+<p>Other metadata options:</p>
+<table>
+<thead>
+<tr>
+<th>title</th>
+<th>Title of the article or page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>Publication date (e.g., YYYY-MM-DD HH:SS)</td>
+</tr>
+<tr>
+<td>modified</td>
+<td>Modification date (e.g., YYYY-MM-DD HH:SS)</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Content tags, separated by commas</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>Content keywords, separated by commas (HTML content only)</td>
+</tr>
+<tr>
+<td>category</td>
+<td>Content category (one only — not multiple)</td>
+</tr>
+<tr>
+<td>slug</td>
+<td>Identifier used in URLs and translations</td>
+</tr>
+<tr>
+<td>author</td>
+<td>Content author, when there is only one</td>
+</tr>
+<tr>
+<td>authors</td>
+<td>Content authors, when there are multiple</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>Brief description of content for index pages</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>Content language ID (en, fr, etc.)</td>
+</tr>
+<tr>
+<td>translation</td>
+<td>If content is a translation of another (true or false)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Content status: draft, hidden, or published</td>
+</tr>
+<tr>
+<td>template</td>
+<td>Name of template to use to generate content (without extension)</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>Save content to this relative file path</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL to use for this article/page</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Markdown Formatting:</strong></p>
+<p>https://daringfireball.net/projects/markdown/syntax</p></div>
+	</div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; Craig Saboe</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

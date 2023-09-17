@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'Craig Saboe'
-SITENAME = 'My Blog'
+SITENAME = 'CraigSaboe.com'
 SITEURL = ''
-THEME = 'themes/bootstrap/'
 
 PATH = 'content'
 OUTPUT_PATH = 'output'
@@ -24,9 +23,18 @@ AUTHOR_FEED_RSS = None
 LINKS = (('Pelican', 'https://getpelican.com/'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),)
+SOCIAL = (('LinkedIn', 'https://www.linkedin.com/in/craigsaboe/'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.toc': {},
+        'markdown.extensions.extra': {},
+    },
+}
+
+GITHUB_URL = 'http://github.com/craigsaboe/'
